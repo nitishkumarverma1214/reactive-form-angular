@@ -1,0 +1,42 @@
+<h1>Form Builder</h1>
+<h2>Dynamically add and remove the validations</h2>
+<form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" formControlName="firstName">
+    </div>
+    <div>
+        <label for="lastName">Last name</label>
+        <input type="text" formControlName="lastName">
+      
+    </div>
+    <div formGroupName="address" class="address-container">
+       <div>
+        <label for="streets">Streets</label>
+        <input type="text" formControlName="streets">
+       </div>
+       <div>
+        <label for="city">City</label>
+        <input type="text" formControlName="city">
+       </div>
+    </div>
+    <div>
+        <label for="differentPermanentAddress">permanentAddress same as address</label>
+        <input type="checkbox" formControlName="differentPermanentAddress" (change)="checkboxEvent($event)" >
+      
+    </div>
+    <div formGroupName="permanentAddress" class="address-container">
+       <div>
+           <label for="streets">Streets</label>
+           <input type="text" formControlName="streets">
+       </div>
+       <div>
+           <label for="city">City</label>
+           <input type="text" formControlName="city">      
+       </div>
+      
+    </div>
+    Form status: {{profileForm.status}}
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  
+</form>

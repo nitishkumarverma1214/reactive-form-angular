@@ -1,0 +1,19 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+form div{
+    display: flex;
+    gap: 1rem;
+    flex: 1 1 0;
+    width: 100%;
+}
+
+form div label{
+    flex-basis: 10%;
+}
+.address-container{
+    flex-direction: column;
+}

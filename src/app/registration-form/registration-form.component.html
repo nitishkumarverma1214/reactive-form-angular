@@ -1,0 +1,60 @@
+<h1>Form Group and Nested Form Group</h1>
+<form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div>
+    <label for="userName">Username</label>
+    <input type="text" formControlName="userName" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" />
+  </div>
+  <div>
+    <label for="phone">Phone</label>
+    <input type="tel" formControlName="phone" />
+  </div>
+  <div>
+    <label for="department">Dept</label>
+    <select name="" id="" formControlName="department">
+      <option value="it">IT</option>
+      <option value="sales">Sales</option>
+      <option value="marketing">Marketing</option>
+    </select>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" />
+  </div>
+  <div>
+    <label for="profileImage">profileImage</label>
+    <input type="url" formControlName="profileImage" />
+  </div>
+  <div formGroupName="address" class="address-container">
+    <div>
+      <label for="street">street</label>
+      <input type="text" formControlName="street" />
+    </div>
+    <div>
+      <label for="city">City</label>
+      <input type="text" formControlName="city" />
+    </div>
+    <div>
+      <label for="state">State</label>
+      <select name="" id="" formControlName="state">
+        <option value="UP">UP</option>
+        <option value="MP">MP</option>
+        <option value="JK">JK</option>
+      </select>
+    </div>
+    <div>
+        <label for="zip">zip</label>
+        <input type="text" formControlName="zip" />
+    </div>
+      
+  </div>
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+</form>

@@ -1,0 +1,19 @@
+<form [formGroup]="educationForm" (ngSubmit)="submitForm()">
+    <div formArrayName="educationSections">
+        @for (section of educationSections.controls; track section) {
+            <div [formGroupName]="$index" class="education-group">
+              <label for="name">Education {{ $index + 1 }}</label>
+              <input formControlName="name" placeholder="Enter education name" />
+        
+              <label for="score">Score</label>
+              <input formControlName="score" placeholder="Enter score" />
+        
+              <button type="button" (click)="removeEducation($index)">Remove</button>
+            </div>
+        }
+    </div>
+  
+    <button type="button" (click)="addEducation()">Add Education</button>
+    <button type="submit">Submit</button>
+  </form>
+  
