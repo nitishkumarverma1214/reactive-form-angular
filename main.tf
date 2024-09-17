@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-east-1"
+  region = "eu-west-1"
 }
 
 variable "bucket_name" {
